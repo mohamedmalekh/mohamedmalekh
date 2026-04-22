@@ -40,21 +40,25 @@ I am passionate about data science, machine learning, and building practical AI 
 
 ## Auto-Updated Repository Snapshot
 
-Last update: 2026-04-22 11:14 UTC
+Last update: 2026-04-22 11:18 UTC
 
 Owned repos detected: 7 (public: 7, private: 0)
 
-### Recently Updated Repositories
+### Recently Updated Public Repositories
 
-- [mohamedmalekh](https://github.com/mohamedmalekh/mohamedmalekh) | N/A | public | last push: 2026-04-22
-- [music_bot](https://github.com/mohamedmalekh/music_bot) | Python | public | last push: 2026-02-09
-- [ABC-SA-evrp](https://github.com/mohamedmalekh/ABC-SA-evrp) | Jupyter Notebook | public | last push: 2025-12-18
-- [benchmark-evrp](https://github.com/mohamedmalekh/benchmark-evrp) | Python | public | last push: 2025-12-17
-- [MLOps-Modularisation-Pipeline](https://github.com/mohamedmalekh/MLOps-Modularisation-Pipeline) | Python | public | last push: 2025-12-03
-- [Projet-Vente-CRM-BI](https://github.com/mohamedmalekh/Projet-Vente-CRM-BI) | N/A | public | last push: 2025-11-22
-- [work_shop_projet_web](https://github.com/mohamedmalekh/work_shop_projet_web) | HTML | public | last push: 2024-05-19
+- [mohamedmalekh](https://github.com/mohamedmalekh/mohamedmalekh) | Python | last push: 2026-04-22
+- [music_bot](https://github.com/mohamedmalekh/music_bot) | Python | last push: 2026-02-09
+- [ABC-SA-evrp](https://github.com/mohamedmalekh/ABC-SA-evrp) | Jupyter Notebook | last push: 2025-12-18
+- [benchmark-evrp](https://github.com/mohamedmalekh/benchmark-evrp) | Python | last push: 2025-12-17
+- [MLOps-Modularisation-Pipeline](https://github.com/mohamedmalekh/MLOps-Modularisation-Pipeline) | Python | last push: 2025-12-03
+- [Projet-Vente-CRM-BI](https://github.com/mohamedmalekh/Projet-Vente-CRM-BI) | N/A | last push: 2025-11-22
+- [work_shop_projet_web](https://github.com/mohamedmalekh/work_shop_projet_web) | HTML | last push: 2024-05-19
 
-Note: private repositories are included only when GH_TOKEN has the required permissions.
+### Private Work (Tools Used Only)
+
+- No private repositories detected with current token.
+
+Privacy rule: names and links of private repositories are never displayed.
 
 <!--END:AUTO-REPOS-->
 

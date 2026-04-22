@@ -50,6 +50,8 @@ def fetch_repositories() -> list[dict]:
 def build_section(repos: list[dict]) -> str:
     public_count = sum(1 for r in repos if not r.get("private"))
     private_count = sum(1 for r in repos if r.get("private"))
+    public_repos = [r for r in repos if not r.get("private")]
+    private_repos = [r for r in repos if r.get("private")]
 
     lines = []
     lines.append("## Auto-Updated Repository Snapshot")
@@ -62,27 +64,48 @@ def build_section(repos: list[dict]) -> str:
         f"Owned repos detected: {len(repos)} (public: {public_count}, private: {private_count})"
     )
     lines.append("")
-    lines.append("### Recently Updated Repositories")
+    lines.append("### Recently Updated Public Repositories")
     lines.append("")
 
-    top_repos = repos[:8]
+    top_repos = public_repos[:8]
     if not top_repos:
-        lines.append("No repositories found.")
+        lines.append("No public repositories found.")
     else:
         for repo in top_repos:
             name = repo.get("name", "unknown")
             html_url = repo.get("html_url", "")
             language = repo.get("language") or "N/A"
-            visibility = "private" if repo.get("private") else "public"
             pushed_at = (repo.get("pushed_at") or "")[:10]
             lines.append(
-                f"- [{name}]({html_url}) | {language} | {visibility} | last push: {pushed_at}"
+                f"- [{name}]({html_url}) | {language} | last push: {pushed_at}"
             )
 
     lines.append("")
-    lines.append(
-        "Note: private repositories are included only when GH_TOKEN has the required permissions."
-    )
+    lines.append("### Private Work (Tools Used Only)")
+    lines.append("")
+
+    if private_count == 0:
+        lines.append("- No private repositories detected with current token.")
+    else:
+        language_counts: dict[str, int] = {}
+        for repo in private_repos:
+            lang = repo.get("language") or "N/A"
+            language_counts[lang] = language_counts.get(lang, 0) + 1
+
+        sorted_langs = sorted(
+            language_counts.items(), key=lambda item: (-item[1], item[0].lower())
+        )
+        tools_summary = ", ".join(
+            [f"{name} ({count})" for name, count in sorted_langs[:8]]
+        )
+
+        lines.append(f"- Private repositories: {private_count}")
+        lines.append(
+            f"- Main tools/languages used in private work: {tools_summary or 'N/A'}"
+        )
+
+    lines.append("")
+    lines.append("Privacy rule: names and links of private repositories are never displayed.")
 
     return "\n".join(lines)
 
